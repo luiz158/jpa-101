@@ -118,16 +118,11 @@ public class OneToManyForeignKeyApplicationTests {
 		SuperAlias alias = new SuperAlias("Parallax", new Date(), new Date());
 		alias.setSuperHero(hero);
 		hero.getAliases().add(alias);
-		//new_aliases.add(alias);
-		//hero.setAliases(new_aliases);
 		heroRepo.save(hero);
 		System.out.println("After Updating the Flash (to have only one Alias), here are all the Alias in the DB (how many for the Flash?):");
 		for (SuperAlias db_alias : aliasRepo.findAll()) {
 			System.out.println(db_alias);
 		}
-		//for (SuperAlias original_alias : original_aliases) {
-		//	aliasRepo.delete(original_alias);
-		//}
 		System.out.println("After deleting the old aliases, here are all the Alias in the DB (how many for the Flash?):");
 		for (SuperAlias db_alias : aliasRepo.findAll()) {
 			System.out.println(db_alias);
