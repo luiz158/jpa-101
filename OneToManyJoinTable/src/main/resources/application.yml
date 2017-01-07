@@ -1,10 +1,10 @@
 spring:
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       naming:
         strategy: org.hibernate.cfg.DefaultNamingStrategy
   datasource:
    username: postgres
    password: postgres
-   url: jdbc:postgresql://localhost:5432/onetomany
+   url: jdbc:postgresql://localhost:5432/onetomanyjt

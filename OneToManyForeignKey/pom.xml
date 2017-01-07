@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.lukeshannon.jpa101</groupId>
-	<artifactId>OneToMany</artifactId>
+	<artifactId>OneToManyForeignKey</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>OneToMany</name>
-	<description>Demo project for Spring Boot</description>
+	<name>OneToManyForeignKey</name>
+	<description>One to Many with ForeignKey</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

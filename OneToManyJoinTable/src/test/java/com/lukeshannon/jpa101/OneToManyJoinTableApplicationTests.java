@@ -23,7 +23,7 @@ import com.lukeshannon.jpa101.repo.SecretHeroRepo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OneToManyApplicationTests {
+public class OneToManyJoinTableApplicationTests {
 	
 	@Autowired
 	private SecretHeroRepo heroRepo;
@@ -108,19 +108,21 @@ public class OneToManyApplicationTests {
 		SuperHero hero = heroRepo.findOne(idOfFlash);
 		System.out.println("TEST UPDATE: Before the Update here is the Flash " + hero.toString());
 		assertNotNull(hero);
-		List<SuperAlias> original_aliases = hero.getAliases();
-		List<SuperAlias> new_aliases = new ArrayList<SuperAlias>();
+		//List<SuperAlias> original_aliases = hero.getAliases();
+		//List<SuperAlias> new_aliases = new ArrayList<SuperAlias>();
 		SuperAlias alias = new SuperAlias("Parallax", new Date(), new Date());
-		new_aliases.add(alias);
-		hero.setAliases(new_aliases);
+		hero.getAliases().clear();
+		hero.getAliases().add(alias);
+		//new_aliases.add(alias);
+		//hero.setAliases(new_aliases);
 		heroRepo.save(hero);
 		System.out.println("After Updating the Flash (to have only one Alias), here are all the Alias in the DB (how many for the Flash?):");
 		for (SuperAlias db_alias : aliasRepo.findAll()) {
 			System.out.println(db_alias);
 		}
-		for (SuperAlias original_alias : original_aliases) {
-			aliasRepo.delete(original_alias);
-		}
+		//for (SuperAlias original_alias : original_aliases) {
+		//	aliasRepo.delete(original_alias);
+		//}
 		System.out.println("After deleting the old aliases, here are all the Alias in the DB (how many for the Flash?):");
 		for (SuperAlias db_alias : aliasRepo.findAll()) {
 			System.out.println(db_alias);
