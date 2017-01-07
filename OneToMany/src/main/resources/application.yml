@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    generate-ddl: true 
+    show-sql: true
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.DefaultNamingStrategy
+  datasource:
+   username: postgres
+   password: postgres
+   url: jdbc:postgresql://localhost:5432/onetomany
