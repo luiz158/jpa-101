@@ -22,10 +22,6 @@ import javax.persistence.Table;
 public class SuperAlias implements Serializable {
 
 	private static final long serialVersionUID = -8348050022738586007L;
-	
-	//@ManyToOne
-	//@JoinColumn(name="hero_id")
-	//private SuperHero superHero;
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="alias_id")
@@ -34,10 +30,8 @@ public class SuperAlias implements Serializable {
 	@Column(name="alias_name")
 	private String aliasName;
 	
-	@Column(name="time_started_using")
 	private Date timeStartedUsing;
 	
-	@Column(name="time_stopped_using")
 	private Date timeStoppedUsing;
 	
 	protected SuperAlias() { }

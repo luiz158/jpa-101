@@ -29,14 +29,12 @@ public class SuperHero implements Serializable {
 	@Column(unique=true)
 	private String name;
 	
-	@OneToMany(fetch=FetchType.EAGER,cascade = {CascadeType.MERGE},orphanRemoval=true)
+	@OneToMany(orphanRemoval=true,fetch=FetchType.EAGER,cascade = {CascadeType.MERGE})
 	@JoinTable
 	(
-	  name="hero_alias",
-	 joinColumns={ @JoinColumn(name="hero_id", referencedColumnName="hero_id") },
-	  inverseJoinColumns={ @JoinColumn(name="alias_id", referencedColumnName="alias_id") }
+	  name = "hero_alias",
+	  joinColumns = { @JoinColumn(name="hero_id", referencedColumnName="hero_id") }, inverseJoinColumns = { @JoinColumn(name="alias_id", referencedColumnName="alias_id") }
 	)
-	//@OneToMany(targetEntity=SuperAlias.class,mappedBy="superHero",orphanRemoval=true, fetch=FetchType.EAGER,cascade = {CascadeType.MERGE})
 	private List<SuperAlias> aliases;
 	
 	public SuperHero() {}

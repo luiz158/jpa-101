@@ -13,15 +13,14 @@ CREATE TABLE super_hero (
 CREATE TABLE super_alias (
 	alias_id serial primary key,
 	alias_name varchar(100),
-	timeStartedUsing date,
-	timeStoppedUsing date
+	time_started_using date,
+	time_stopped_using date
 );
 
 CREATE TABLE hero_alias (
   hero_id integer NOT NULL,
   alias_id integer NOT NULL,
-  CONSTRAINT fk_hero_id FOREIGN KEY (hero_id)
-             REFERENCES super_hero (hero_id),
-  CONSTRAINT fk_alias_id FOREIGN KEY (alias_id)
-             REFERENCES super_alias (alias_id)
+  CONSTRAINT fk_hero_id FOREIGN KEY (hero_id) REFERENCES super_hero (hero_id),
+  CONSTRAINT fk_alias_id FOREIGN KEY (alias_id) REFERENCES super_alias (alias_id)
 );
+
