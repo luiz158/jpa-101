@@ -19,18 +19,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.lukeshannon.jpa101.model.SuperAlias;
 import com.lukeshannon.jpa101.model.SuperHero;
-import com.lukeshannon.jpa101.repo.SecretAliasRepo;
-import com.lukeshannon.jpa101.repo.SecretHeroRepo;
+import com.lukeshannon.jpa101.repo.SuperAliasRepo;
+import com.lukeshannon.jpa101.repo.SuperHeroRepo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class OneToManyForeignKeyApplicationTests {
 	
 	@Autowired
-	private SecretHeroRepo heroRepo;
+	private SuperHeroRepo heroRepo;
 	
 	@Autowired
-	private SecretAliasRepo aliasRepo;
+	private SuperAliasRepo aliasRepo;
 	
 	private Long idOfFlash;
 	
@@ -50,8 +50,6 @@ public class OneToManyForeignKeyApplicationTests {
 			alias1.setSuperHero(flash);
 			SuperAlias alias2 = new SuperAlias("Flash", new Date(), new Date());
 			alias2.setSuperHero(flash);
-			//aliasRepo.save(alias1);
-			//aliasRepo.save(alias2);
 			List<SuperAlias> aliases = new ArrayList<SuperAlias>();
 			aliases.add(alias1);
 			aliases.add(alias2);
@@ -63,8 +61,6 @@ public class OneToManyForeignKeyApplicationTests {
 			alias1.setSuperHero(spiderman);
 			alias2 = new SuperAlias("Spider-man", new Date(), new Date());
 			alias2.setSuperHero(spiderman);
-			//aliasRepo.save(alias1);
-			//aliasRepo.save(alias2);
 			aliases = new ArrayList<SuperAlias>();
 			aliases.add(alias1);
 			aliases.add(alias2);

@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.lukeshannon.jpa101.model.SuperAlias;
 
-public interface SecretAliasRepo extends CrudRepository<SuperAlias, Long> {
+public interface SuperAliasRepo extends CrudRepository<SuperAlias, Long> {
 	
 
 }

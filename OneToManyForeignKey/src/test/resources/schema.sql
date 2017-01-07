@@ -1,3 +1,5 @@
+--this is the schema for FK one to many relationships
+
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 CREATE SEQUENCE hibernate_sequence;
 

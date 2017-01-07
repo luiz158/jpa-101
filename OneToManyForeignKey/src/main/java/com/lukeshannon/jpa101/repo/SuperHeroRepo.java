@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.lukeshannon.jpa101.model.SuperHero;
 
-public interface SecretHeroRepo extends CrudRepository<SuperHero, Long> {
+public interface SuperHeroRepo extends CrudRepository<SuperHero, Long> {
 	
 	List<SuperHero> findByName(String name);
 
