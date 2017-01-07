@@ -27,7 +27,7 @@ public class SuperHero implements Serializable {
 	@Column(unique=true)
 	private String name;
 	
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="superHero", fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="superHero", fetch=FetchType.EAGER, orphanRemoval=true)
 	private List<SuperAlias> aliases;
 	
 	public SuperHero() {}
